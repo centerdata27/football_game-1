@@ -16,7 +16,7 @@ export default function App() {
     return (
       <main className="min-h-screen flex flex-col items-center p-6 bg-slate-100">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">
-          Football Game - Feature 1
+          Football Game - Feature 1 
         </h1>
         <Scoreboard score={score} possession={possession} />
         <Controls onScore={handleScore} onToggle={toggle} />

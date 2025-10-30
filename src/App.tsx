@@ -1,14 +1,22 @@
 import { useState } from "react";
-import type { Score, Team } from './types';
+import type { Score, Team, GameStatus } from './types';
 import Scoreboard from "./components/Scoreboard";
 import Controls from "./components/Controls";
 
 export default function App() {
   const [score, setScore] = useState<Score>({HOME:0, AWAY: 0});
   const [possession, setPossession] = useState<Team>("HOME");
+  const [quarter, setQuarter] = useState <1|2|3|4>(1)
+  const [status, setStatus] = useState <GameStatus>('IN_PROGRESS')
 
-  const handleScore = (team: Team, pts: number) =>
-      setScore((s) => ({...s, [team]: s[team] + pts}));
+  function handleScore(team:Team, pts:number){
+    if (status === 'FINAL') return;
+      setScore((s) => ({...s, [team]: s[team] +pts}));
+    
+  }
+
+  // const handleScore = (team: Team, pts: number) =>
+  //     setScore((s) => ({...s, [team]: s[team] + pts}));
 
   const toggle = () =>
       setPossession((p) => (p === "HOME" ? "AWAY" : "HOME"));

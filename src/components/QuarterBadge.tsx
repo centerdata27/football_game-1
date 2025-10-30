@@ -6,7 +6,7 @@ export default function QuarterBadge({quarter}:QuarterBadgeProps) {
     return(
         <span className="inline-flex items px-3 py-1 rounded-full text-sm font-semibold bg-amber-800 border-amber-300"
         aria-label="Quarter"
-        tittle= "Game Quarter">
+        title= "Game Quarter">
             {label}
         </span>
     )
